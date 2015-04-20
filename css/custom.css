@@ -1,0 +1,34 @@
+.ui-overlay-a,
+.ui-page-theme-a,
+.ui-page-theme-a .ui-panel-wrapper {
+	/*background: url("../img/skulls.png") repeat scroll left top rgba(0, 0, 0, 0);*/
+	background: url("../img/light_background-wallpaper-960x640.jpg") no-repeat fixed left top / cover  rgba(0, 0, 0, 0);
+}
+
+#dCover img {
+	width: 100px;
+	height: 100px;
+}
+
+.popupForm {
+	width: 242px;
+}
+
+.ui-header .ui-title,
+.ui-footer .ui-title {
+	margin: 0 4%;
+}
+
+.ui-listview > .ui-li-static {
+	text-overflow: unset;
+	white-space: normal;
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+.ui-header {
+	background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.dp-toast {
+	z-index: 99999;
+}

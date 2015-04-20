@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>keep-calm-and-party-on-garth</title>
+
+	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.mobile-1.4.5.min.js"></script>
+	<script src="js/jquery.dpToast.js"></script>
+	<script src="js/functions.js"></script>
+</head>
+<body>
+
+
+<div data-role="page" id="current">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<h1>current</h1>
+	</div>
+
+	<div role="main" class="ui-content">
+		<div>
+			<h3 id="cName"></h3>
+
+			<p id="cNickname">requested by: <span></span></p>
+
+			<div class="ui-grid-a">
+				<p id="cCover" class="ui-block-a"></p>
+				<div class="ui-block-b">
+					<p id="cArtist"></p>
+					<p id="cYear">Year: <span></span></p>
+				</div>
+			</div>
+
+			<p id="cAlbum">Album: <span></span></p>
+			<p id="cComposer">Composer: <span></span></p>
+			<p id="cDuration">Duration: <span></span></p>
+		</div>
+
+		<hr/>
+
+		<h3>next up/ place your vote</h3>
+		<ul id="next-up" data-role="listview" data-inset="true"></ul>
+
+		<div data-role="popup" id="vote" data-theme="a" data-overlay-theme="b" class="ui-content" style="max-width:340px; padding-bottom:2em;">
+			<h3>Vote?</h3>
+			<a href="#" id="voteUp" data-key="" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-plus ui-btn-icon-left ui-btn-inline ui-mini"> (+1) </a>
+			<a href="#" id="voteDown" data-key="" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-b ui-icon-minus ui-btn-icon-left ui-btn-inline ui-mini"> (-1) </a>
+			<a href="#" data-rel="back" class="ui-shadow ui-btn ui-corner-all ui-btn-inline ui-mini">Cancel</a>
+		</div>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#current" data-icon="home" class="ui-btn-active ui-state-persist">current</a></li>
+				<li><a href="#search" data-icon="plus">request</a></li>
+				<li><a href="#profile" data-icon="gear">my profile</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div data-role="page" id="search">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<h1>request songs for queue</h1>
+	</div>
+
+	<div role="main" class="ui-content">
+		<form class="ui-filterable">
+			<input id="autocomplete-song_artist-input" data-type="search" placeholder="song or artist contains...">
+		</form>
+		<ul id="autocomplete-song_artist" data-role="listview" data-inset="true" data-filter="true" data-input="#autocomplete-song_artist-input"></ul>
+	</div>
+
+	<div data-role="popup" data-dismissible="false" id="popup-song-detail" data-theme="b" class="ui-corner-all ui-content">
+		<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">close</a>
+		<form action="#" id="requestSongButton" class="popupForm">
+			<input id="dTrackID" type="hidden" name="trackid" value="" />
+			<div>
+				<h3 id="dName"></h3>
+
+				<div class="ui-grid-a">
+					<p id="dCover" class="ui-block-a"></p>
+					<div class="ui-block-b">
+						<p id="dArtist"></p>
+						<p id="dYear">Year: <span></span></p>
+					</div>
+				</div>
+
+				<p id="dAlbum">Album: <span></span></p>
+				<p id="dComposer">Composer: <span></span></p>
+				<p id="dDuration">Duration: <span></span></p>
+			</div>
+			<input data-icon="plus" value="request song" type="submit" data-theme="c" />
+		</form>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#current" data-icon="home">current</a></li>
+				<li><a href="#search" data-icon="plus" class="ui-btn-active ui-state-persist">request</a></li>
+				<li><a href="#profile" data-icon="gear">my profile</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+
+<div data-role="page" id="profile">
+	<div data-role="header" data-position="fixed" data-tap-toggle="false">
+		<h1>my profile</h1>
+	</div>
+
+	<div role="main" class="ui-content">
+		<form action="#" id="profileForm">
+			<div>
+				<label>
+					your nickname - add @ in front for better twitter-mention :)
+					<input id="nickname" type="text" name="nickname" value="unknownGarth" />
+				</label>
+			</div>
+			<input data-icon="check" value="save" type="submit" data-theme="c" />
+		</form>
+	</div>
+
+	<div data-role="footer" data-position="fixed" data-tap-toggle="false">
+		<div data-role="navbar">
+			<ul>
+				<li><a href="#current" data-icon="home">current</a></li>
+				<li><a href="#search" data-icon="plus">request</a></li>
+				<li><a href="#profile" data-icon="gear" class="ui-btn-active ui-state-persist">my profile</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+</body>
+</html>
